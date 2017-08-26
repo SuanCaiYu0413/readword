@@ -12,12 +12,15 @@ class sbs():
         self.researchareas = ''
         #协作单位
         self.cooperationUnits = []
+        #申报编号
+        self.declareCode = ''
 
     def parse(self):
         self.research_areas()
         self.cooperation_units()
         self.researchersr()
-        return {'researchersrs':self.researchersrs,'researchareas':self.researchareas,'cooperationUnits':self.cooperationUnits}
+        self.declare_code()
+        return {'researchersrs':self.researchersrs,'researchareas':self.researchareas,'cooperationUnits':self.cooperationUnits,'declareCode':self.declareCode}
 
 
     '''
@@ -85,3 +88,10 @@ class sbs():
             # 分工
             item['dtw'] = tds[1].get_text().strip()
             self.cooperationUnits.append(item)
+
+    '''
+        申报编号
+    '''
+    def declare_code(self):
+        table = self.soup.find_all('table')[0]
+        self.declareCode = table.find_all('tr')[0].find_all('td')[1].get_text().strip()
