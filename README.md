@@ -3,3 +3,7 @@
 # 运行环境
 - Python 2.7
 - Python库bs4
+# 运行
+```
+python main.py
+```
