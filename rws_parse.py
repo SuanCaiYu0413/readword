@@ -12,6 +12,7 @@ class rws():
         self.cooperationUnits = []
         #申报编号
         self.declareCode = ''
+
     '''
         总解析
     '''
@@ -21,6 +22,7 @@ class rws():
         self.cooperation_units()
         self.declare_code()
         return {'researchersrs':self.researchersrs,'researchareas':self.researchareas,'cooperationUnits':self.cooperationUnits,'declareCode':self.declareCode}
+
     '''
         研究领域
     '''
@@ -56,6 +58,7 @@ class rws():
             #专业
             item['profession'] = tds[3].get_text().strip()
             self.researchersrs.append(item)
+
     '''
         协作单位
     '''
@@ -82,7 +85,6 @@ class rws():
             # 分工
             item['dtw'] = tds[1].get_text().strip()
             self.cooperationUnits.append(item)
-
 
     '''
         申报编号
