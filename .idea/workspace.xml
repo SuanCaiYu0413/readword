@@ -17,70 +17,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1242">
-              <caret line="54" column="56" lean-forward="true" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
-              <folding>
-                <element signature="e#24#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rws_parse.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rws_parse.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="63" column="7" lean-forward="true" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
-              <folding>
-                <element signature="e#105#329#0" expanded="false" />
-                <element signature="e#388#657#0" expanded="false" />
-                <element signature="e#726#843#0" expanded="false" />
-                <element signature="e#910#1698#0" expanded="false" />
-                <element signature="e#1770#2510#0" expanded="false" />
-                <element signature="e#1920#2166#0" expanded="false" />
-                <element signature="e#2577#2703#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sbs_parse.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sbs_parse.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-              <folding>
-                <element signature="e#107#331#0" expanded="false" />
-                <element signature="e#362#631#0" expanded="false" />
-                <element signature="e#702#822#0" expanded="false" />
-                <element signature="e#889#1856#0" expanded="false" />
-                <element signature="e#1928#2668#0" expanded="false" />
-                <element signature="e#2735#2861#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="yss_parse.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/yss_parse.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
-              <folding>
-                <element signature="e#107#235#0" expanded="false" />
-                <element signature="e#267#396#0" expanded="false" />
-                <element signature="e#463#589#0" expanded="false" />
-                <element signature="e#657#758#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -97,9 +34,9 @@
       <list>
         <option value="$PROJECT_DIR$/readword.py" />
         <option value="$PROJECT_DIR$/sbs_parse.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/yss_parse.py" />
         <option value="$PROJECT_DIR$/rws_parse.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -110,7 +47,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="47" />
+    <option name="x" value="-8" />
     <option name="width" value="1924" />
     <option name="height" value="1060" />
   </component>
@@ -129,7 +66,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -198,7 +135,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,7 +389,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="0" width="1924" height="1060" extended-state="0" />
+    <frame x="-8" y="0" width="1924" height="1060" extended-state="0" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -460,7 +397,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10617551" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10617551" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -509,6 +446,60 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rws_parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1449">
+          <caret line="63" column="7" lean-forward="true" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+          <folding>
+            <element signature="e#105#329#0" expanded="false" />
+            <element signature="e#388#657#0" expanded="false" />
+            <element signature="e#726#843#0" expanded="false" />
+            <element signature="e#910#1698#0" expanded="false" />
+            <element signature="e#1770#2510#0" expanded="false" />
+            <element signature="e#1920#2166#0" expanded="false" />
+            <element signature="e#2577#2703#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sbs_parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding>
+            <element signature="e#107#331#0" expanded="false" />
+            <element signature="e#362#631#0" expanded="false" />
+            <element signature="e#702#822#0" expanded="false" />
+            <element signature="e#889#1856#0" expanded="false" />
+            <element signature="e#1928#2668#0" expanded="false" />
+            <element signature="e#2735#2861#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yss_parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <folding>
+            <element signature="e#107#235#0" expanded="false" />
+            <element signature="e#267#396#0" expanded="false" />
+            <element signature="e#463#589#0" expanded="false" />
+            <element signature="e#657#758#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rws_parse.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -530,10 +521,12 @@
         <state relative-caret-position="460">
           <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
+            <element signature="e#107#331#0" expanded="false" />
             <element signature="e#362#631#0" expanded="false" />
             <element signature="e#702#822#0" expanded="false" />
             <element signature="e#889#1856#0" expanded="false" />
             <element signature="e#1928#2668#0" expanded="false" />
+            <element signature="e#2735#2861#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -542,7 +535,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#107#235#0" expanded="false" />
+            <element signature="e#267#396#0" expanded="false" />
+            <element signature="e#463#589#0" expanded="false" />
+            <element signature="e#657#758#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -607,15 +605,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readword.py" />
-    <entry file="file://$PROJECT_DIR$/yss_parse.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+        <state relative-caret-position="-483">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
-            <element signature="e#107#235#0" expanded="false" />
-            <element signature="e#267#396#0" expanded="false" />
-            <element signature="e#463#589#0" expanded="false" />
-            <element signature="e#657#758#0" expanded="false" />
+            <element signature="e#24#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -623,7 +618,7 @@
     <entry file="file://$PROJECT_DIR$/rws_parse.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
-          <caret line="63" column="7" lean-forward="true" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+          <caret line="63" column="7" lean-forward="false" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
           <folding>
             <element signature="e#105#329#0" expanded="false" />
             <element signature="e#388#657#0" expanded="false" />
@@ -638,7 +633,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sbs_parse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
+        <state relative-caret-position="437">
           <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
           <folding>
             <element signature="e#107#331#0" expanded="false" />
@@ -651,12 +646,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/yss_parse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="54" column="56" lean-forward="true" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
+        <state relative-caret-position="368">
+          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
           <folding>
-            <element signature="e#24#40#0" expanded="true" />
+            <element signature="e#107#235#0" expanded="false" />
+            <element signature="e#267#396#0" expanded="false" />
+            <element signature="e#463#589#0" expanded="false" />
+            <element signature="e#657#758#0" expanded="false" />
           </folding>
         </state>
       </provider>
