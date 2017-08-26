@@ -49,9 +49,9 @@ for item in sbs_data['cooperationUnits']:
     print '%s\t%s'%(item['name'],item['dtw'])
 print
 print u'主要研究人员:'
-print u'姓名\t学位\t职称\t专业'
+print u'姓名\t性别\t职称\t学历\t专业'
 for item in sbs_data['researchersrs']:
-    print '%s\t%s\t%s\t%s'%(item['name'],item['degree'],item['jobTitle'],item['profession'])
+    print '%s\t%s\t%s\t%s\t%s'%(item['name'],item['six'],item['jobTitle'],item['education'],item['profession'])
 print '------------------------------------------------'
 
 
@@ -68,6 +68,6 @@ print '------------------------------------------------'
 print u'项目编号:',
 print yss_data['projectCode']
 print
-print u'信息简报'
+print u'信息简报:'
 print yss_data['infoBriefing']
 print '------------------------------------------------'

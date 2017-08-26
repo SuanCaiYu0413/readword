@@ -54,12 +54,14 @@ class sbs():
             item = {}
             # 姓名
             item['name'] = tds[0].get_text().strip()
-            # 学位
-            item['degree'] = tds[1].get_text().strip()
+            # 性别
+            item['six'] = tds[1].get_text().strip()
             # 职称
             item['jobTitle'] = tds[2].get_text().strip()
-            # 专业
-            item['profession'] = tds[3].get_text().strip()
+            # 学历
+            item['education'] = tds[3].get_text().strip()
+            #专业
+            item['profession'] = tds[4].get_text().strip()
             self.researchersrs.append(item)
 
     '''
