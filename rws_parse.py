@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#任务书内容提取
 from bs4 import BeautifulSoup
 class rws():
 
@@ -12,7 +13,8 @@ class rws():
         self.cooperationUnits = []
         #申报编号
         self.declareCode = ''
-
+        #项目编号
+        self.projectCode = ''
     '''
         总解析
     '''
@@ -21,7 +23,8 @@ class rws():
         self.researchersr()
         self.cooperation_units()
         self.declare_code()
-        return {'researchersrs':self.researchersrs,'researchareas':self.researchareas,'cooperationUnits':self.cooperationUnits,'declareCode':self.declareCode}
+        self.project_code()
+        return {'projectCode':self.projectCode,'researchersrs':self.researchersrs,'researchareas':self.researchareas,'cooperationUnits':self.cooperationUnits,'declareCode':self.declareCode}
 
     '''
         研究领域
@@ -92,3 +95,21 @@ class rws():
     def declare_code(self):
         table = self.soup.find_all('table')[0]
         self.declareCode = table.find_all('tr')[0].find_all('td')[1].get_text().strip()
+
+    def project_code(self):
+        table = self.soup.find_all('table')[0]
+        self.projectCode = table.find_all('tr')[0].find_all('td')[3].get_text().strip()
+
+    def test(self):
+        tables = self.soup.find_all('div')
+        print tables
+
+
+if __name__ == "__main__":
+
+    with open('./rws/10rkx0002rws.html') as fp:
+        r = rws(fp.read())
+        print fp.readline()
+        fp.close()
+        r.test()
+

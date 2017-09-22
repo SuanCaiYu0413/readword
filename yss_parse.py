@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#验收书提取
 from bs4 import BeautifulSoup
 
 class yss():
@@ -31,3 +32,15 @@ class yss():
     def info_briefing(self):
         table = self.soup.find_all('table')[3]
         self.infoBriefing = table.find_all('tr')[1].get_text()
+
+    def test(self):
+        tables = self.soup.find_all('table')
+        print tables
+
+
+if __name__ == "__main__":
+
+    with open('./yss/10rkx0002yss.htm') as fp:
+        r = yss(fp.read())
+        fp.close()
+        r.test()
