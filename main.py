@@ -14,22 +14,28 @@ class DataParser():
         with open('./config.ini', 'rb') as fp:
             config.readfp(fp)
 
-        self.excel = None
+        self.excel_rws = None
+        self.excel_sbs = None
+        self.excel_yss = None
         self.rws_dir = config.get('dir', 'rws')
         self.sbs_dir = config.get('dir', 'sbs')
         self.yss_dir = config.get('dir', 'yss')
         self.excel_dir = config.get('dir','result')
+        self.excel_dir = [self.excel_dir + i + '.xls' for i in '123']
+        print self.excel_dir
         self.create_file()
 
     def create_file(self):
-        self.excel = xlwt.Workbook()
-        self.yss_table = self.excel.add_sheet('yss', cell_overwrite_ok=True)
-        self.rws_table = self.excel.add_sheet('rws', cell_overwrite_ok=True)
-        self.rws_researchersr = self.excel.add_sheet('rws_researchersr', cell_overwrite_ok=True)
-        self.rws_cooperationUnits = self.excel.add_sheet('rws_cooperationUnits', cell_overwrite_ok=True)
-        self.sbs_table = self.excel.add_sheet('sbs', cell_overwrite_ok=True)
-        self.sbs_researchersr = self.excel.add_sheet('sbs_researchersr', cell_overwrite_ok=True)
-        self.sbs_cooperationUnits = self.excel.add_sheet('sbs_cooperationUnits', cell_overwrite_ok=True)
+        self.excel_rws = xlwt.Workbook()
+        self.excel_sbs = xlwt.Workbook()
+        self.excel_yss = xlwt.Workbook()
+        self.yss_table = self.excel_yss.add_sheet(u'验收书', cell_overwrite_ok=True)
+        self.rws_table = self.excel_rws.add_sheet(u'任务书', cell_overwrite_ok=True)
+        self.rws_researchersr = self.excel_rws.add_sheet(u'研究人员', cell_overwrite_ok=True)
+        self.rws_cooperationUnits = self.excel_rws.add_sheet(u'协作单位', cell_overwrite_ok=True)
+        self.sbs_table = self.excel_sbs.add_sheet(u'申报书', cell_overwrite_ok=True)
+        self.sbs_researchersr = self.excel_sbs.add_sheet(u'研究人员', cell_overwrite_ok=True)
+        self.sbs_cooperationUnits = self.excel_sbs.add_sheet(u'协作单位', cell_overwrite_ok=True)
 
     def help(self):
         print u'run------------解析所有文档'
@@ -42,13 +48,17 @@ class DataParser():
         self.rws_parser()
 
     def rws_parser(self):
-        self.rws_table.write(0, 0, 'projectCode')
-        self.rws_table.write(0, 1, 'researchareas')
-        self.rws_table.write(0, 2, 'declareCode')
-        l = ['name', 'degree', 'jobTitle', 'profession', 'declareCode']
+        rowNo = {"rws":1,"researchersr":1,"cooperationUnits":1}
+
+        self.rws_table.write(0, 0, u'项目编号')
+        self.rws_table.write(0, 1, u'研究领域')
+        self.rws_table.write(0, 2, u'申报编号')
+        self.rws_table.write(0, 3, u'项目名称')
+
+        l = [u'姓名', u'学位', u'职称', u'专业', u'申报编号']
         for index, name in enumerate(l):
             self.rws_researchersr.write(0, index, name)
-        l = ['name', 'dtw', 'declareCode']
+        l = [u'名称', u'分工', u'申报编号',u'单位性质',u'地址',u'邮编']
         for index, name in enumerate(l):
             self.rws_cooperationUnits.write(0, index, name)
         for index, file in enumerate(os.listdir(self.rws_dir)):
@@ -64,32 +74,42 @@ class DataParser():
                         fp.close()
                 if html:
                     rws_data = rws_parse.rws(html).parse()
-                    self.rws_table.write(index + 1, 0, rws_data['projectCode'])
-                    self.rws_table.write(index + 1, 1, rws_data['researchareas'])
-                    self.rws_table.write(index + 1, 2, rws_data['declareCode'])
+                    self.rws_table.write(rowNo['rws'], 0, rws_data['projectCode'])
+                    self.rws_table.write(rowNo['rws'], 1, rws_data['researchareas'])
+                    self.rws_table.write(rowNo['rws'], 2, rws_data['declareCode'])
+                    self.rws_table.write(rowNo['rws'], 3, rws_data['projectName'])
+                    rowNo['rws'] += 1
                     for index1, item in enumerate(rws_data['researchersrs']):
                         l = ['name', 'degree', 'jobTitle', 'profession']
                         for i, str in enumerate(l):
-                            self.rws_researchersr.write(index1 + 1, i, item[str])
-                        self.rws_researchersr.write(index1 + 1, 4, rws_data['declareCode'])
-
+                            self.rws_researchersr.write(rowNo['researchersr'], i, item[str])
+                        self.rws_researchersr.write(rowNo['researchersr'], 4, rws_data['declareCode'])
+                        rowNo['researchersr'] += 1
+                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 0, rws_data['oneUnit']['name'])
+                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 2, rws_data['declareCode'])
+                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 3, rws_data['oneUnit']['unitNature'])
+                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 4, rws_data['oneUnit']['address'])
+                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 5, rws_data['oneUnit']['zipCode'])
+                    rowNo['cooperationUnits'] += 1
                     for index2, item in enumerate(rws_data['cooperationUnits']):
                         l = ['name', 'dtw']
                         for i, str in enumerate(l):
-                            self.rws_cooperationUnits.write(index2 + 1, i, item[str])
-                        self.rws_cooperationUnits.write(index2 + 1, 2, rws_data['declareCode'])
-                    print rws_data
-                    self.excel.save(self.excel_dir)
+                            self.rws_cooperationUnits.write(rowNo['cooperationUnits'], i, item[str])
+                        self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 2, rws_data['declareCode'])
+                    rowNo['cooperationUnits'] += 1
+                    print file
+                self.excel_rws.save(self.excel_dir[0])
 
 
     def sbs_parser(self):
-        l1 = ['researchareas', 'declareCode', 'projectCode']
+        rowNo = {"sbs":1,"researchersr":1,"cooperationUnits":1}
+        l1 = [u'项目编号',u'研究领域', u'申报编号',  u'项目名称']
         for index, name in enumerate(l1):
             self.sbs_table.write(0, index, name)
-        l2 = ['name', 'six', 'jobTitle', 'education', 'profession', 'declareCode']
+        l2 = [u'姓名', u'性别', u'职称', u'学历', u'专业', u'申报编号']
         for index, name in enumerate(l2):
             self.sbs_researchersr.write(0, index, name)
-        l3 = ['name', 'dtw', 'declareCode']
+        l3 = [u'名称', u'分工', u'申报编号',u'单位性质',u'地址',u'邮编']
         for index, name in enumerate(l3):
             self.sbs_cooperationUnits.write(0, index, name)
         for index, file in enumerate(os.listdir(self.sbs_dir)):
@@ -105,24 +125,35 @@ class DataParser():
                         fp.close()
                 if html:
                     sbs_data = sbs_parse.sbs(html).parse()
+                    l1 = [ 'projectCode','researchareas','declareCode','projectName']
                     for index1, name in enumerate(l1):
-                        self.sbs_table.write(index + 1, index1, sbs_data[name])
+                        self.sbs_table.write(rowNo['sbs'], index1, sbs_data[name])
+                    rowNo['sbs'] += 1
                     for index2, item in enumerate(sbs_data['researchersrs']):
                         l2 = ['name', 'six', 'jobTitle', 'education', 'profession']
                         for i, str in enumerate(l2):
-                            self.sbs_researchersr.write(index2 + 1, i, item[str])
-                        self.sbs_researchersr.write(index2 + 1, 5, sbs_data['declareCode'])
+                            self.sbs_researchersr.write(rowNo['researchersr'], i, item[str])
+                        self.sbs_researchersr.write(rowNo['researchersr'], 5, sbs_data['declareCode'])
+                        rowNo['researchersr'] += 1
+
+                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 0, sbs_data['oneUnit']['name'])
+                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 2, sbs_data['declareCode'])
+                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 3, sbs_data['oneUnit']['unitNature'])
+                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 4, sbs_data['oneUnit']['address'])
+                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 5, sbs_data['oneUnit']['zipCode'])
+                    rowNo['cooperationUnits'] += 1
                     for index3, item in enumerate(sbs_data['cooperationUnits']):
                         l3 = ['name', 'dtw']
                         for i, str in enumerate(l3):
-                            self.sbs_cooperationUnits.write(index3 + 1, i, item[str])
-                        self.sbs_cooperationUnits.write(index3 + 1, 2, sbs_data['declareCode'])
-                    print sbs_data
-                    self.excel.save(self.excel_dir)
+                            self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], i, item[str])
+                        self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 2, sbs_data['declareCode'])
+                        rowNo['cooperationUnits'] += 1
+                    print file
+                    self.excel_sbs.save(self.excel_dir[1])
 
     def yss_parser(self):
-        self.yss_table.write(0, 0, 'projectCode')
-        self.yss_table.write(0, 1, 'infoBriefing')
+        self.yss_table.write(0, 0, u'项目编号')
+        self.yss_table.write(0, 1, u'成果信息简报')
         for index, file in enumerate(os.listdir(self.yss_dir)):
             filename = os.path.join(self.yss_dir, file)
             if os.path.isfile(filename):
@@ -138,8 +169,8 @@ class DataParser():
                     yss_data = yss_parse.yss(html).parse()
                     self.yss_table.write(index + 1, 0, yss_data['projectCode'])
                     self.yss_table.write(index + 1, 1, yss_data['infoBriefing'])
-            print yss_data
-            self.excel.save(self.excel_dir)
+            print file
+            self.excel_yss.save(self.excel_dir[2])
 
 
 if __name__ == "__main__":
@@ -154,4 +185,4 @@ if __name__ == "__main__":
         elif input == 'run':
             dp.run()
         else:
-            print '未知指令'
+            print u'未知指令'

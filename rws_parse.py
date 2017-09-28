@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #任务书内容提取
 from bs4 import BeautifulSoup
+import codecs
 class rws():
 
     def __init__(self,html):
@@ -15,6 +16,10 @@ class rws():
         self.declareCode = ''
         #项目编号
         self.projectCode = ''
+        #项目名称
+        self.projectName = ''
+        #第一负责单位
+        self.oneUnit = {"name":"","unitNature":"","address":"","zipCode":""}
     '''
         总解析
     '''
@@ -24,7 +29,9 @@ class rws():
         self.cooperation_units()
         self.declare_code()
         self.project_code()
-        return {'projectCode':self.projectCode,'researchersrs':self.researchersrs,'researchareas':self.researchareas,'cooperationUnits':self.cooperationUnits,'declareCode':self.declareCode}
+        self.project_name()
+        self.one_unit()
+        return {'oneUnit':self.oneUnit,'projectName':self.projectName,'projectCode':self.projectCode,'researchersrs':self.researchersrs,'researchareas':self.researchareas,'cooperationUnits':self.cooperationUnits,'declareCode':self.declareCode}
 
     '''
         研究领域
@@ -44,9 +51,8 @@ class rws():
         for tr in trs:
             if flag:
                 nameTrs.append(tr)
-            if tr.td.string != None and tr.td.string.strip() == u'主要研究人员':
+            if  tr.find_all('td')[0].get_text().strip() == u'主要研究人员':
                 flag = True
-
         for tr in nameTrs:
             tds = tr.find_all('td')
             if tds[0].get_text().strip() == "":
@@ -71,11 +77,11 @@ class rws():
         flag = False
         its_tr = []
         for tr in trs:
-            if tr.td.string != None and tr.td.string.strip() == u'项目负责人':
+            if tr.find_all('td')[0].get_text().strip() == u'项目负责人':
                 flag = False
             if flag:
                 its_tr.append(tr)
-            if tr.td.string != None and tr.td.string.strip() == u'协作单位':
+            if tr.find_all('td')[0].get_text().strip() == u'协作单位':
                 flag = True
 
         for tr in its_tr:
@@ -101,15 +107,35 @@ class rws():
         self.projectCode = table.find_all('tr')[0].find_all('td')[3].get_text().strip()
 
     def test(self):
-        tables = self.soup.find_all('div')
-        print tables
+        tables = self.soup.find_all('table')
+        print tables[9].find_all('tr')[0].get_text()
 
+    def project_name(self):
+        table = self.soup.find_all('table')[1]
+        self.projectName = table.find_all('tr')[1].get_text().split(u"：")[1].strip()
+
+
+    def one_unit(self):
+        table = self.soup.find_all('table')[9]
+        trs = table.find_all('tr')
+        flag = False
+        its_tr = []
+        for tr in trs:
+            if tr.find_all('td')[0].get_text().rstrip().replace("\n", "") == u'协作单位':
+                flag = False
+            if flag:
+                its_tr.append(tr)
+            if tr.find_all('td')[0].get_text().rstrip().replace("\n", "") == u'第一承担单位':
+                its_tr.append(tr)
+                flag = True
+        self.oneUnit['name'] = its_tr[0].find_all('td')[2].get_text().strip()
+        self.oneUnit['unitNature'] = its_tr[4].find_all('td')[3].get_text().strip()
+        self.oneUnit['address'] = its_tr[1].find_all('td')[1].get_text().strip()
+        self.oneUnit['zipCode'] = its_tr[1].find_all('td')[3].get_text().strip()
 
 if __name__ == "__main__":
 
-    with open('./rws/10rkx0002rws.html') as fp:
-        r = rws(fp.read())
-        print fp.readline()
-        fp.close()
-        r.test()
 
+    with codecs.open(r'.\rws\10rkx0002rws.html','r','utf-16') as fp:
+        r = rws(fp.read())
+        r.one_unit()
