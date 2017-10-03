@@ -30,6 +30,7 @@ class DataParser():
         self.excel_sbs = xlwt.Workbook()
         self.excel_yss = xlwt.Workbook()
         self.yss_table = self.excel_yss.add_sheet(u'验收书', cell_overwrite_ok=True)
+        self.yss_researchersr = self.excel_yss.add_sheet(u'研究人员', cell_overwrite_ok=True)
         self.rws_table = self.excel_rws.add_sheet(u'任务书', cell_overwrite_ok=True)
         self.rws_researchersr = self.excel_rws.add_sheet(u'研究人员', cell_overwrite_ok=True)
         self.rws_cooperationUnits = self.excel_rws.add_sheet(u'协作单位', cell_overwrite_ok=True)
@@ -50,7 +51,7 @@ class DataParser():
     def rws_parser(self):
         rowNo = {"rws":1,"researchersr":1,"cooperationUnits":1}
 
-        self.rws_table.write(0, 0, u'项目编号')
+        self.rws_table.write(0, 0, u'计划编号')
         self.rws_table.write(0, 1, u'研究领域')
         self.rws_table.write(0, 2, u'申报编号')
         self.rws_table.write(0, 3, u'项目名称')
@@ -103,7 +104,7 @@ class DataParser():
 
     def sbs_parser(self):
         rowNo = {"sbs":1,"researchersr":1,"cooperationUnits":1}
-        l1 = [u'项目编号',u'研究领域', u'申报编号',  u'项目名称']
+        l1 = [u'计划编号',u'研究领域', u'申报编号',  u'项目名称']
         for index, name in enumerate(l1):
             self.sbs_table.write(0, index, name)
         l2 = [u'姓名', u'性别', u'职称', u'学历', u'专业', u'申报编号']
@@ -152,8 +153,14 @@ class DataParser():
                     self.excel_sbs.save(self.excel_dir[1])
 
     def yss_parser(self):
-        self.yss_table.write(0, 0, u'项目编号')
+        rowNo = {'yss':1,'researchersr':1}
+        self.yss_table.write(0, 0, u'计划编号')
         self.yss_table.write(0, 1, u'成果信息简报')
+        self.yss_table.write(0, 2, u'项目名称')
+        self.yss_table.write(0, 3, u'单位名称')
+        li = [u'姓名',u'年龄',u'文化程度',u'所学专业',u'职务职称',u'工作单位',u'贡献',u'计划编号']
+        for index,item in enumerate(li):
+            self.yss_researchersr.write(0,index,item)
         for index, file in enumerate(os.listdir(self.yss_dir)):
             filename = os.path.join(self.yss_dir, file)
             if os.path.isfile(filename):
@@ -167,8 +174,19 @@ class DataParser():
                         fp.close()
                 if html:
                     yss_data = yss_parse.yss(html).parse()
-                    self.yss_table.write(index + 1, 0, yss_data['projectCode'])
-                    self.yss_table.write(index + 1, 1, yss_data['infoBriefing'])
+                    self.yss_table.write(rowNo['yss'], 0, yss_data['projectCode'])
+                    self.yss_table.write(rowNo['yss'], 1, yss_data['infoBriefing'])
+                    self.yss_table.write(rowNo['yss'], 2, yss_data['projectName'])
+                    self.yss_table.write(rowNo['yss'], 3, yss_data['unitName'])
+                    rowNo['yss'] += 1
+
+                    for item in yss_data['Researches']:
+                        li = ['name','age','education','profession','jobTitle','jobUnit','contribution']
+                        for ix,data in enumerate(li):
+                            self.yss_researchersr.write(rowNo['researchersr'],ix,item[li[ix]])
+                        self.yss_researchersr.write(rowNo['researchersr'],7, yss_data['projectCode'])
+                        rowNo['researchersr'] += 1
+
             print file
             self.excel_yss.save(self.excel_dir[2])
 
