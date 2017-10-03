@@ -3,6 +3,8 @@
 # 运行环境
 - Python 2.7
 - Python库bs4
+- Python库xlwt
+- word转html需要安装office word程序
 # 运行
 ```
 python main.py
