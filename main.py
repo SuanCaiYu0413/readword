@@ -56,10 +56,10 @@ class DataParser():
         self.rws_table.write(0, 2, u'申报编号')
         self.rws_table.write(0, 3, u'项目名称')
 
-        l = [u'姓名', u'学位', u'职称', u'专业', u'申报编号']
+        l = [u'序号',u'姓名', u'学位', u'职称', u'专业', u'申报编号']
         for index, name in enumerate(l):
             self.rws_researchersr.write(0, index, name)
-        l = [u'名称', u'分工', u'申报编号',u'单位性质',u'地址',u'邮编']
+        l = [u'序号',u'名称', u'分工', u'申报编号',u'单位性质',u'地址',u'邮编']
         for index, name in enumerate(l):
             self.rws_cooperationUnits.write(0, index, name)
         for index, file in enumerate(os.listdir(self.rws_dir)):
@@ -82,21 +82,24 @@ class DataParser():
                     rowNo['rws'] += 1
                     for index1, item in enumerate(rws_data['researchersrs']):
                         l = ['name', 'degree', 'jobTitle', 'profession']
+                        self.rws_researchersr.write(rowNo['researchersr'], 0, index1+1)
                         for i, str in enumerate(l):
-                            self.rws_researchersr.write(rowNo['researchersr'], i, item[str])
-                        self.rws_researchersr.write(rowNo['researchersr'], 4, rws_data['declareCode'])
+                            self.rws_researchersr.write(rowNo['researchersr'], i+1, item[str])
+                        self.rws_researchersr.write(rowNo['researchersr'], 5, rws_data['declareCode'])
                         rowNo['researchersr'] += 1
-                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 0, rws_data['oneUnit']['name'])
-                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 2, rws_data['declareCode'])
-                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 3, rws_data['oneUnit']['unitNature'])
-                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 4, rws_data['oneUnit']['address'])
-                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 5, rws_data['oneUnit']['zipCode'])
+                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 0, 1)
+                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 1, rws_data['oneUnit']['name'])
+                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 3, rws_data['declareCode'])
+                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 4, rws_data['oneUnit']['unitNature'])
+                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 5, rws_data['oneUnit']['address'])
+                    self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 6, rws_data['oneUnit']['zipCode'])
                     rowNo['cooperationUnits'] += 1
                     for index2, item in enumerate(rws_data['cooperationUnits']):
                         l = ['name', 'dtw']
+                        self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 0, index2+2)
                         for i, str in enumerate(l):
-                            self.rws_cooperationUnits.write(rowNo['cooperationUnits'], i, item[str])
-                        self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 2, rws_data['declareCode'])
+                            self.rws_cooperationUnits.write(rowNo['cooperationUnits'], i+1, item[str])
+                        self.rws_cooperationUnits.write(rowNo['cooperationUnits'], 3, rws_data['declareCode'])
                     rowNo['cooperationUnits'] += 1
                     print file
                 self.excel_rws.save(self.excel_dir[0])
@@ -107,10 +110,10 @@ class DataParser():
         l1 = [u'计划编号',u'研究领域', u'申报编号',  u'项目名称']
         for index, name in enumerate(l1):
             self.sbs_table.write(0, index, name)
-        l2 = [u'姓名', u'性别', u'职称', u'学历', u'专业', u'申报编号']
+        l2 = [u'序号',u'姓名', u'性别', u'职称', u'学历', u'专业', u'申报编号']
         for index, name in enumerate(l2):
             self.sbs_researchersr.write(0, index, name)
-        l3 = [u'名称', u'分工', u'申报编号',u'单位性质',u'地址',u'邮编']
+        l3 = [u'序号',u'名称', u'分工', u'申报编号',u'单位性质',u'地址',u'邮编']
         for index, name in enumerate(l3):
             self.sbs_cooperationUnits.write(0, index, name)
         for index, file in enumerate(os.listdir(self.sbs_dir)):
@@ -132,22 +135,25 @@ class DataParser():
                     rowNo['sbs'] += 1
                     for index2, item in enumerate(sbs_data['researchersrs']):
                         l2 = ['name', 'six', 'jobTitle', 'education', 'profession']
+                        self.sbs_researchersr.write(rowNo['researchersr'], 0, index2+1)
                         for i, str in enumerate(l2):
-                            self.sbs_researchersr.write(rowNo['researchersr'], i, item[str])
-                        self.sbs_researchersr.write(rowNo['researchersr'], 5, sbs_data['declareCode'])
+                            self.sbs_researchersr.write(rowNo['researchersr'], i+1, item[str])
+                        self.sbs_researchersr.write(rowNo['researchersr'], 6, sbs_data['declareCode'])
                         rowNo['researchersr'] += 1
 
-                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 0, sbs_data['oneUnit']['name'])
-                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 2, sbs_data['declareCode'])
-                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 3, sbs_data['oneUnit']['unitNature'])
-                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 4, sbs_data['oneUnit']['address'])
-                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 5, sbs_data['oneUnit']['zipCode'])
+                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 0, 1)
+                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 1, sbs_data['oneUnit']['name'])
+                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 3, sbs_data['declareCode'])
+                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 4, sbs_data['oneUnit']['unitNature'])
+                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 5, sbs_data['oneUnit']['address'])
+                    self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 6, sbs_data['oneUnit']['zipCode'])
                     rowNo['cooperationUnits'] += 1
                     for index3, item in enumerate(sbs_data['cooperationUnits']):
                         l3 = ['name', 'dtw']
+                        self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 0, index3+2)
                         for i, str in enumerate(l3):
-                            self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], i, item[str])
-                        self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 2, sbs_data['declareCode'])
+                            self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], i+1, item[str])
+                        self.sbs_cooperationUnits.write(rowNo['cooperationUnits'], 3, sbs_data['declareCode'])
                         rowNo['cooperationUnits'] += 1
                     print file
                     self.excel_sbs.save(self.excel_dir[1])
@@ -180,11 +186,12 @@ class DataParser():
                     self.yss_table.write(rowNo['yss'], 3, yss_data['unitName'])
                     rowNo['yss'] += 1
 
-                    for item in yss_data['Researches']:
+                    for index1,item in enumerate(yss_data['Researches']):
                         li = ['name','age','education','profession','jobTitle','jobUnit','contribution']
+                        self.yss_researchersr.write(rowNo['researchersr'], 0, index1+1)
                         for ix,data in enumerate(li):
-                            self.yss_researchersr.write(rowNo['researchersr'],ix,item[li[ix]])
-                        self.yss_researchersr.write(rowNo['researchersr'],7, yss_data['projectCode'])
+                            self.yss_researchersr.write(rowNo['researchersr'],ix+1,item[li[ix]])
+                        self.yss_researchersr.write(rowNo['researchersr'],8, yss_data['projectCode'])
                         rowNo['researchersr'] += 1
 
             print file

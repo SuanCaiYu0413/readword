@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../CnkiSpider/ChatChines/.idea/ChatChines.iml" filepath="$PROJECT_DIR$/../CnkiSpider/ChatChines/.idea/ChatChines.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../CnkiSpider/SpiderManage/.idea/SpiderManage.iml" filepath="$PROJECT_DIR$/../CnkiSpider/SpiderManage/.idea/SpiderManage.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../CnkiSpider/UserManage/.idea/UserManage.iml" filepath="$PROJECT_DIR$/../CnkiSpider/UserManage/.idea/UserManage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../proxyPool/.idea/proxyPool.iml" filepath="$PROJECT_DIR$/../proxyPool/.idea/proxyPool.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/word.iml" filepath="$PROJECT_DIR$/.idea/word.iml" />
     </modules>
   </component>
