@@ -164,7 +164,7 @@ class DataParser():
         self.yss_table.write(0, 1, u'成果信息简报')
         self.yss_table.write(0, 2, u'项目名称')
         self.yss_table.write(0, 3, u'单位名称')
-        li = [u'姓名',u'年龄',u'文化程度',u'所学专业',u'职务职称',u'工作单位',u'贡献',u'计划编号']
+        li = [u'序号',u'姓名',u'年龄',u'文化程度',u'所学专业',u'职务职称',u'工作单位',u'贡献',u'计划编号']
         for index,item in enumerate(li):
             self.yss_researchersr.write(0,index,item)
         for index, file in enumerate(os.listdir(self.yss_dir)):
