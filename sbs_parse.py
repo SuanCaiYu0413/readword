@@ -1,28 +1,27 @@
 # -*- coding: utf-8 -*-
-#申报书内容提取
+# 申报书内容提取
 import codecs
 
 from bs4 import BeautifulSoup
 
 
 class sbs():
-
-    def __init__(self,html):
+    def __init__(self, html):
         self.soup = BeautifulSoup(html, 'lxml')
-        #研究人员
+        # 研究人员
         self.researchersrs = []
-        #研究领域
+        # 研究领域
         self.researchareas = ''
-        #协作单位
+        # 协作单位
         self.cooperationUnits = []
-        #申报编号
+        # 申报编号
         self.declareCode = ''
-        #项目编号
+        # 项目编号
         self.projectCode = ''
-        #项目名称
+        # 项目名称
         self.projectName = ''
-        #第一负责单位
-        self.oneUnit = {"name":"","unitNature":"","address":"","zipCode":""}
+        # 第一负责单位
+        self.oneUnit = {"name": "", "unitNature": "", "address": "", "zipCode": ""}
 
     def parse(self):
         self.research_areas()
@@ -32,21 +31,23 @@ class sbs():
         self.project_code()
         self.project_name()
         self.one_unit()
-        return {'oneUnit':self.oneUnit,'projectName':self.projectName,'projectCode':self.projectCode,'researchersrs':self.researchersrs,'researchareas':self.researchareas,'cooperationUnits':self.cooperationUnits,'declareCode':self.declareCode}
-
+        return {'oneUnit': self.oneUnit, 'projectName': self.projectName, 'projectCode': self.projectCode,
+                'researchersrs': self.researchersrs, 'researchareas': self.researchareas,
+                'cooperationUnits': self.cooperationUnits, 'declareCode': self.declareCode}
 
     '''
         研究领域
     '''
+
     def research_areas(self):
 
         table = self.soup.find_all('table')[2]
         self.researchareas = table.find_all('tr')[1].find_all('td')[1].get_text()
 
-
     '''
         项目名称
     '''
+
     def project_name(self):
 
         table = self.soup.find_all('table')[1]
@@ -55,6 +56,7 @@ class sbs():
     '''
         研究人员
     '''
+
     def researchersr(self):
         table = self.soup.find_all('table')[5]
         trs = table.find_all('tr')
@@ -105,7 +107,7 @@ class sbs():
             item['jobTitle'] = tds[2].get_text().strip()
             # 学历
             item['education'] = tds[3].get_text().strip()
-            #专业
+            # 专业
             item['profession'] = tds[4].get_text().strip()
             if item['name'] != item_zhu['name']:
                 self.researchersrs.append(item)
@@ -113,6 +115,7 @@ class sbs():
     '''
         协作单位
     '''
+
     def cooperation_units(self):
         table = self.soup.find_all('table')[5]
         trs = table.find_all('tr')
@@ -140,6 +143,7 @@ class sbs():
     '''
         申报编号
     '''
+
     def declare_code(self):
         table = self.soup.find_all('table')[0]
         self.declareCode = table.find_all('tr')[0].find_all('td')[1].get_text().strip()
@@ -166,7 +170,8 @@ class sbs():
         self.oneUnit['address'] = its_tr[1].find_all('td')[1].get_text().strip()
         self.oneUnit['zipCode'] = its_tr[1].find_all('td')[3].get_text().strip()
 
-if __name__ =="__main__":
-    with codecs.open(r'.\sbs\10rkx0002sbs.html','r','utf-16') as fp:
+
+if __name__ == "__main__":
+    with codecs.open(r'.\sbs\10rkx0002sbs.html', 'r', 'utf-16') as fp:
         r = sbs(fp.read())
         r.researchersr()
