@@ -46,6 +46,28 @@ class rws():
     def researchersr(self):
         table = self.soup.find_all('table')[9]
         trs = table.find_all('tr')
+
+        flag = False
+        its_tr = []
+        for tr in trs:
+            if tr.find_all('td')[0].get_text().strip() == u'项目组人数':
+                flag = False
+            if flag:
+                its_tr.append(tr)
+            if tr.find_all('td')[0].get_text().strip() == u'项目负责人':
+                its_tr.append(tr)
+                flag = True
+
+        item_zhu = {}
+        # 姓名
+        item_zhu['name'] = its_tr[0].find_all('td')[2].get_text().strip()
+        # 学位
+        item_zhu['degree'] = its_tr[1].find_all('td')[1].get_text().strip()
+        # 职称
+        item_zhu['jobTitle'] = its_tr[1].find_all('td')[3].get_text().strip()
+        # 专业
+        item_zhu['profession'] = its_tr[2].find_all('td')[1].get_text().strip()
+        self.researchersrs.append(item_zhu)
         flag = False
         nameTrs = []
         for tr in trs:
@@ -66,7 +88,8 @@ class rws():
             item['jobTitle'] = tds[2].get_text().strip()
             #专业
             item['profession'] = tds[3].get_text().strip()
-            self.researchersrs.append(item)
+            if item['name'] != item_zhu['name']:
+                self.researchersrs.append(item)
 
     '''
         协作单位
@@ -138,4 +161,4 @@ if __name__ == "__main__":
 
     with codecs.open(r'.\rws\10rkx0002rws.html','r','utf-16') as fp:
         r = rws(fp.read())
-        r.one_unit()
+        r.researchersr()

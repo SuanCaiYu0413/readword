@@ -8,6 +8,8 @@
     <orderEntry type="module" module-name="UserManage" />
     <orderEntry type="module" module-name="ChatChines" />
     <orderEntry type="module" module-name="proxyPool" />
+    <orderEntry type="module" module-name="CnkiSpider" />
+    <orderEntry type="module" module-name="newProject" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="Nosetests" />
