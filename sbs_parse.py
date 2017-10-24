@@ -1,13 +1,20 @@
 # -*- coding: utf-8 -*-
 # 申报书内容提取
 import codecs
-
+from log import Log
 from bs4 import BeautifulSoup
 
 
 class sbs():
-    def __init__(self, html):
+    def __init__(self, html, filename):
         self.soup = BeautifulSoup(html, 'lxml')
+
+        self.keyword = {'baseinfo_table': [u'承担单位', u'现从事专业', u'在本项目中的分工', u'归口部门'],
+                        'field_table': [u'研究领域', u'立项的必要性及国内外研究现状', u'项目名称'],
+                        'code_table': [u'申报编号', u'计划编号', u'密级']
+                        }
+        self.tables = {}
+        self.filename = filename
         # 研究人员
         self.researchersrs = []
         # 研究领域
@@ -22,15 +29,41 @@ class sbs():
         self.projectName = ''
         # 第一负责单位
         self.oneUnit = {"name": "", "unitNature": "", "address": "", "zipCode": ""}
+        self.find()
+
+    def find(self):
+        tables = self.soup.find_all('table')
+        for table in tables:
+            string = table.get_text().strip().replace('\n', '').replace(' ', '')
+            for key in self.keyword:
+                count = 0
+                for keyword in self.keyword[key]:
+                    if string.find(keyword) != -1:
+                        count += 1
+                if count == len(self.keyword[key]):
+                    self.tables[key] = table
 
     def parse(self):
-        self.research_areas()
-        self.cooperation_units()
-        self.researchersr()
-        self.declare_code()
-        self.project_code()
-        self.project_name()
-        self.one_unit()
+
+        if 'baseinfo_table' in self.tables:
+            self.one_unit(self.tables['baseinfo_table'])
+            self.cooperation_units(self.tables['baseinfo_table'])
+            self.researchersr(self.tables['baseinfo_table'])
+        else:
+            Log.write(u'%s:为查找到人员信息表格' % self.filename)
+
+        if 'code_table' in self.tables:
+            self.declare_code(self.tables['code_table'])
+            self.project_code(self.tables['code_table'])
+        else:
+            Log.write(u'%s:为查找到文档信息表格' % self.filename)
+
+        if 'field_table' in self.tables:
+            self.research_areas(self.tables['field_table'])
+            self.project_name(self.tables['field_table'])
+        else:
+            Log.write(u'%s:为查找到研究领域信息表格' % self.filename)
+
         return {'oneUnit': self.oneUnit, 'projectName': self.projectName, 'projectCode': self.projectCode,
                 'researchersrs': self.researchersrs, 'researchareas': self.researchareas,
                 'cooperationUnits': self.cooperationUnits, 'declareCode': self.declareCode}
@@ -39,28 +72,23 @@ class sbs():
         研究领域
     '''
 
-    def research_areas(self):
+    def research_areas(self, table):
 
-        table = self.soup.find_all('table')[2]
         self.researchareas = table.find_all('tr')[1].find_all('td')[1].get_text()
 
     '''
         项目名称
     '''
 
-    def project_name(self):
-
-        table = self.soup.find_all('table')[1]
-        self.projectName = table.find_all('tr')[0].find_all('td')[2].get_text().strip()
+    def project_name(self, table):
+        self.projectName = table.find_all('tr')[0].find_all('td')[1].get_text().strip()
 
     '''
         研究人员
     '''
 
-    def researchersr(self):
-        table = self.soup.find_all('table')[5]
+    def researchersr(self, table):
         trs = table.find_all('tr')
-
         flag = False
         its_tr = []
         for tr in trs:
@@ -116,8 +144,7 @@ class sbs():
         协作单位
     '''
 
-    def cooperation_units(self):
-        table = self.soup.find_all('table')[5]
+    def cooperation_units(self, table):
         trs = table.find_all('tr')
         flag = False
         its_tr = []
@@ -144,16 +171,16 @@ class sbs():
         申报编号
     '''
 
-    def declare_code(self):
-        table = self.soup.find_all('table')[0]
+    def declare_code(self, table):
+
         self.declareCode = table.find_all('tr')[0].find_all('td')[1].get_text().strip()
 
-    def project_code(self):
-        table = self.soup.find_all('table')[0]
+    def project_code(self, table):
+
         self.projectCode = table.find_all('tr')[0].find_all('td')[3].get_text().strip()
 
-    def one_unit(self):
-        table = self.soup.find_all('table')[5]
+    def one_unit(self, table):
+
         trs = table.find_all('tr')
         flag = False
         its_tr = []
@@ -172,6 +199,6 @@ class sbs():
 
 
 if __name__ == "__main__":
-    with codecs.open(r'.\sbs\10rkx0002sbs.html', 'r', 'utf-16') as fp:
-        r = sbs(fp.read())
-        r.researchersr()
+    with codecs.open(r'.\sbs\10RKX0066sbs.html', 'r', 'utf-16') as fp:
+        r = sbs(fp.read(), 'asd')
+        print r.parse()

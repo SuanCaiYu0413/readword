@@ -10,6 +10,7 @@
     <orderEntry type="module" module-name="proxyPool" />
     <orderEntry type="module" module-name="CnkiSpider" />
     <orderEntry type="module" module-name="newProject" />
+    <orderEntry type="module" module-name="musicSpider" />
   </component>
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="Nosetests" />

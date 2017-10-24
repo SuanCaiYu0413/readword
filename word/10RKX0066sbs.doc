@@ -1,0 +1,945 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>申报书打印</title>
+
+
+<style type="text/css">
+<!--
+.STYLE4 {font-size: 36px}
+.STYLE5 {
+	font-size: 24px;
+	font-weight: bold;
+}
+.STYLE6 {font-size: 24px}
+-->
+</style>
+<style>   
+  table{border-collapse:collapse;border:solid   black;}   
+  td{border: 1px solid   black}   
+  </style>   
+<style>
+.gh{
+	position:absolute;
+	left:20px;
+	right:20px;
+	visibility: visible;
+}
+</style>
+
+<style> 
+.p{
+text-indent:2em;
+font-size:17px;
+ line-height:40px;
+ } 
+</style>
+<style> 
+.p2{
+text-indent:2em;
+font-size:16px;
+ line-height:36px;
+ } 
+</style>
+<style> 
+.p1{
+ line-height:16px;
+ font-size:16px;
+ } 
+</style>
+<style> 
+.middle-demo-2{
+padding-top: 24px;
+padding-bottom: 24px;
+} 
+</style>
+<style>
+.def{
+	border-left-width:0px;
+	border-top-width:0px;
+	border-right-width:0px;
+	border-bottom-width:1px;
+	border-bottom-color:#000000;
+	able-layout:fixed;
+	word-break:break-all;
+	ord-wrap: break-word;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-family: "宋体";
+	line-height: 1.8;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+}
+.def1{
+	border-left-width:0px;
+	border-top-width:0px;
+	border-right-width:0px;
+	border-bottom-width:0px;
+	border-bottom-color:#FFFFFF;
+	able-layout:fixed;
+	word-break:break-all;
+	ord-wrap: break-word;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-family: "宋体";
+	line-height: 1.8;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+}
+.abc{border-left-width:1px;
+border-top-width:1px;
+border-right-width:1px;
+border-bottom-width:1px;
+border-color:#000000;
+border-bottom-color:#000000;
+able-layout:fixed;
+word-break:break-all; 
+ord-wrap: break-word;
+font-size: 14px;
+letter-spacing: 1px;
+font-family: "宋体";
+line-height: 1.8; }
+.abc1 {
+	border-left-width:1px;
+	border-top-width:1px;
+	border-right-width:1px;
+	border-bottom-width:0px;
+	border-bottom-color:#CCCCCC;
+	able-layout:fixed;
+	word-break:break-all;
+	ord-wrap: break-word;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-family: "宋体";
+	line-height: 1.8;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-left-color: #000000;
+}
+.abc2{
+	border-left-width:1px;
+	border-top-width:0px;
+	border-right-width:1px;
+	border-bottom-width:1px;
+	border-bottom-color:#000000;
+	able-layout:fixed;
+	word-break:break-all;
+	ord-wrap: break-word;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-family: "宋体";
+	line-height: 1.8;
+	border-top-color: #FFFFFF;
+	border-right-color: #000000;
+	border-left-color: #000000;
+}
+.abc3{
+	border-left-width:1px;
+	border-top-width:0px;
+	border-right-width:1px;
+	border-bottom-width:1px;
+	border-bottom-color:#000000;
+	able-layout:fixed;
+	word-break:break-all;
+	ord-wrap: break-word;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-family: "宋体";
+	line-height: 1.8;
+	border-top-color: #FFFFFF;
+	border-right-color: #000000;
+	border-left-color: #000000;
+}
+.STYLE8 {
+	color: #000000;
+	font-weight: bold;
+	font-size: 16px;
+}
+.bm{
+	text-decoration: underline;
+}
+.STYLE10 {font-size: 18px}
+.STYLE11 {font-size: 16px}
+.abc4 {border-left-width:1px;
+border-top-width:1px;
+border-right-width:1px;
+border-bottom-width:1px;
+border-color:#000000;
+border-bottom-color:#000000;
+able-layout:fixed;
+word-break:break-all; 
+ord-wrap: break-word;
+font-size: 14px;
+letter-spacing: 1px;
+font-family: "宋体";
+line-height: 1.8; }
+.abc5 {border-left-width:1px;
+border-top-width:1px;
+border-right-width:1px;
+border-bottom-width:1px;
+border-color:#000000;
+
+border-bottom-color:#000000;
+able-layout:fixed;
+word-break:break-all; 
+ord-wrap: break-word;
+font-size: 14px;
+letter-spacing: 1px;
+font-family: "宋体";
+line-height: 1.8; }
+.btn {
+ BORDER-RIGHT: #7b9ebd 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #7b9ebd 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde); BORDER-LEFT: #7b9ebd 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #7b9ebd 1px solid
+}
+.abc6 {border-left-width:1px;
+border-top-width:1px;
+border-right-width:1px;
+border-bottom-width:1px;
+border-color:#000000;
+border-bottom-color:#000000;
+able-layout:fixed;
+word-break:break-all; 
+ord-wrap: break-word;
+font-size: 14px;
+letter-spacing: 1px;
+font-family: "宋体";
+line-height: 1.8; }
+.abc7 {border-left-width:1px;
+border-top-width:1px;
+border-right-width:1px;
+border-bottom-width:1px;
+border-color:#000000;
+border-bottom-color:#000000;
+able-layout:fixed;
+word-break:break-all; 
+ord-wrap: break-word;
+font-size: 14px;
+letter-spacing: 1px;
+font-family: "宋体";
+line-height: 1.8; }
+.def11 {border-left-width:0px;
+	border-top-width:0px;
+	border-right-width:0px;
+	border-bottom-width:0px;
+	border-bottom-color:#FFFFFF;
+	able-layout:fixed;
+	word-break:break-all;
+	ord-wrap: break-word;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-family: "宋体";
+	line-height: 1.8;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+}
+.def11 {border-left-width:0px;
+	border-top-width:0px;
+	border-right-width:0px;
+	border-bottom-width:0px;
+	border-bottom-color:#FFFFFF;
+	able-layout:fixed;
+	word-break:break-all;
+	ord-wrap: break-word;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-family: "宋体";
+	line-height: 1.8;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+}
+.def2 {border-left-width:0px;
+	border-top-width:0px;
+	border-right-width:0px;
+	border-bottom-width:1px;
+	border-bottom-color:#000000;
+	able-layout:fixed;
+	word-break:break-all;
+	ord-wrap: break-word;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-family: "宋体";
+	line-height: 1.8;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+}
+</style>
+<script language="javascript">   
+function getObject(id)
+{	if(document.getElementById)
+	{	return document.getElementById(id);}
+	else if(document.all)
+	{	return document.all[id];}
+	else if(document.layers)
+	{	return document.layers[id];}
+}
+function shuoming(){
+	getObject('OutText').innerHTML = '';
+	OpenWord();
+}
+function OpenWord(){
+	abc.style.border = 0;
+	ExcelSheet = new ActiveXObject('Word.Application');
+	ExcelSheet.Application.Visible = true;
+	var mydoc = ExcelSheet.Documents.Add('',0,1);
+	myRange = mydoc.Range(0,1) ;
+	var sel = abc.document.body.createTextRange();
+	sel.select();
+	abc.document.execCommand('Copy');
+	sel.moveEnd('character');
+	myRange.Paste();
+	ExcelSheet.ActiveWindow.ActivePane.View.Type=wdPrintView;
+}
+</script>
+</head>
+<body>
+<p align="center">
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0" class="def11">
+  <tr>
+    <td height="5" align="right" valign="bottom"  width="17%"class="def11" ><span class="STYLE8">申报编号：</span></td>
+    <td class="def2"  align="left" width="21%" style="margin-bottom:0px;margin-top:20px" valign="bottom"><span class="STYLE11">
+      10RKX0066      &nbsp;</span></td>
+    <td valign="bottom" class="def11" align="right" width="15%"><span class="STYLE8">计划编号：</span></td>
+    <td valign="bottom" class="def2" align="left" width="19%">      &nbsp;</td>
+    <td valign="bottom" class="def11" align="right" width="11%"><span class="STYLE8">密级：</span></td>
+    <td class="def2"  align="left" width="17%" style="margin-bottom:0px;margin-top:20px" valign="bottom">&nbsp;</td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+</p>
+<p align="center"><span class="STYLE4"><strong>四川省软科学研究计划 </strong><br />
+  <strong>项 目 申 报 书 </strong></span></p>
+<p align="center">&nbsp;</p>
+<table width="680" border="0" align="center" cellpadding="0" cellspacing="0" class="def1">
+<tr>
+<td rowspan="8" align="right" class="def1"  width="6%" ></td>
+<td width="29%" height="65" align="right"  valign="bottom" class="def1" ><span class="STYLE8">项目名称：</span></td>
+<td class="def"  align="left" width="50%" style="margin-bottom:0px;margin-top:20px" valign="bottom"><span class="STYLE11">
+四川省创新发展引导基金的设立建议及运作方案</span></td>
+<td rowspan="8" align="right" class="def1"  width="15%" ></td>
+</tr>
+
+<tr>
+<td class="def1" align="right" height="53" valign="bottom" ><span class="STYLE8">申报单位(盖章)：</span></td>
+<td class="def"  valign="bottom" align="left" style="margin-bottom:0px;margin-top:20px"><span class="STYLE11">四川省科技信息研究所</span></td>
+</tr>
+<tr>
+<td class="def1" align="right" height="53" valign="bottom" ><span class="STYLE8">项目负责人：</span></td>
+<td class="def" align="left" style="margin-bottom:0px;margin-top:20px" valign="bottom"><span class="STYLE11">倪文新</span></td>
+</tr>
+
+
+<tr>
+<td class="def1" align="right" height="53" valign="bottom" ><span class="STYLE8">归口部门：</span></td>
+<td class="def" align="left" style="margin-bottom:0px;margin-top:20px" valign="bottom"><span class="STYLE11">省科技厅</span></td>
+</tr>
+<tr>
+<td  height="53" class="def1" align="right" valign="bottom" ><span class="STYLE8">项目起止年限：</span></td>
+<td class="def" align="left" style="margin-bottom:0px;margin-top:20px" valign="bottom"><span class="STYLE11">2009-08-24至2010-12-31</span></td>
+</tr>
+
+</table>
+<p align="center" class="STYLE10">&nbsp;</p>
+<p align="center" class="STYLE10">&nbsp;</p>
+
+<p align="center" class="STYLE10">&nbsp;</p>
+
+
+<p align="center"><span  class="STYLE5"><strong>四川省科学技术厅制  </strong></span> 
+<p align="center"><strong>二</strong><strong>0      </strong><strong>年</strong><strong>     </strong><strong>月</strong><strong> </strong><span class="STYLE5"></strong></span></p>
+<p align="center">&nbsp;</p>
+
+<span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:12.0pt;font-family:
+"Times New Roman";mso-fareast-font-family:SimSun;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA'><br
+clear=all style='mso-special-character:line-break;page-break-before:always'>
+</span>
+
+<p align="center"><span class="STYLE6"><strong>填 报 说 明 </strong></span></p>
+<p align="center">&nbsp;</p>
+<ol class="p">
+<li>填写项目申报书以前，请先查阅四川省软科学研究计划项目本年度申报指南和有关项目申报办法规定。申报书内各项内容，应实事求是，认真填写，表述明确。外来语要同时用原文和中文表达，第一次出现的缩略词，须注明全称。
+<li>申报人不用填写“申报编号”栏。
+<li> 项目归口部门是指项目申报单位所隶属的省级有关部门或所在市、州科技局。
+<li> 项目申报人须通过四川省科技计划项目管理中心（http://xmgl.scst.gov.cn）提交项目申报书。申报人在线填写完毕后，等待申报单位审核，审核完毕后通过网上申报系统打印书面材料并加盖单位公章后报送归口部门，由归口部门审核合格并加盖公章后统一报四川省科技厅项目受理办公室（发展计划处，联系电话028-86669425）。
+</ol>
+<p align="center">&nbsp;</p>
+<span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:12.0pt;font-family:
+"Times New Roman";mso-fareast-font-family:SimSun;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA'><br
+clear=all style='mso-special-character:line-break;page-break-before:always'>
+</span>
+
+
+
+<p align="left"  ><strong>A.项目基本信息</strong> </p>
+<table border="1" cellspacing="0"  style="border:none" cellpadding="0" width="680"   align="center" class="abc">
+  <tr>
+    <td width="20%" height="41"><p align="center">项目名称</p></td>
+    <td><p>四川省创新发展引导基金的设立建议及运作方案</p></td>
+  </tr>
+  
+  <tr>
+    <td width="20%" height="62"><p align="center">研究领域</p></td>
+    <td>财政金融政策</td>
+  </tr>
+  
+  <tr>
+    <td width="568" height="38" colspan="2"><p align="center"><strong>立项的必要性及国内外研究现状</strong></p></td>
+  </tr>
+  <tr>
+    <td width="568" height="690" colspan="2" valign="top"><table border="1" cellspacing="0" cellpadding="0" style="border-bottom: medium none; border-left: medium none; border-collapse: collapse; border-top: medium none; border-right: medium none">
+    <tbody>
+        <tr style="height: 22.9pt">
+            <td width="568" style="border-bottom: windowtext 1pt solid; border-left: windowtext 1pt solid; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 426.1pt; padding-right: 5.4pt; height: 22.9pt; border-top: windowtext 1pt solid; border-right: windowtext 1pt solid; padding-top: 0cm">
+            <div>一、立项的必要性</div>
+            <div>为贯彻《国务院实施〈国家中长期科学和技术发展规划纲要（<span>2006-2020年）〉若干配套政策》（国发[2006]6号），支持科技型中小企业自主创新，科技部、财政部专门设立了科技型中小企业技术创新基金，用于引导风险投资机构向初创期科技型中小企业投资。而目前我省正处于风险投资体系建设初期，风险投资企业数量较少，规模较小，严重制约着创业创新的发展。而造成这种状况的一个重要原因，就是引导基金尚未设立。尽早设立引导基金，打通中小企业&ldquo;融资难&rdquo;瓶颈，不仅可以进一步做强做大我省现有风险投资企业，而且为加快吸引更多外省、海外创业企业入川提供了有利的平台。</span></div>
+            <div>1、设立引导基金，是缓解中小企业融资难，提高中小企业集聚水平的需要。中小企业由于资产信用等级较低、缺乏抵押资产、融资成本较高等原因，较难得到银行资金支持。据不完全统计，<span>2009我省中小企业资金缺口高达2000亿元左右。所以，亟需通过设立创业投资引导基金，引导和推动创业投资这种新型投融资工具加大对于创业前期的中小企业的投资力度，进一步拓宽中小企业的融资渠道。</span></div>
+            <div>2、设立引导基金，是进一步做强做大我省风险投资的需要。我省风险投资已得到初步发展，但与沿海经济发达地区相比，与本省推进创业创新的需求相比还有较大差距，具体表现为风险投资机构较少，资本金较小，创业投资人才严重不足。鉴于我省风险投资发展中面临的突出问题，必须进一步营造风险投资环境，培育风险投资机构，分散和控制风险投资风险，吸引战略投资者和引进先进的投资管理理念，通过为中小企业提供管理和资本增值服务，从而整体促进风险投资体系建设。</div>
+            <div>3、设立引导基金，是创新政府投资方式，深化投融资体制改革的需求。政府风险投资引导基金既区别于商业性基金，又区别于务虚考虑资金回收的财政账户或者财政补助资金，从而有助于提高政府投资质量和效率，创新政府投资方式，推进投融资体制改革的进一步深化。</div>
+            <div>二、国内外研究现状</div>
+            <div align="left">在风险投资运行环境不断改善的同时，从<span>1999 年起，我国一些地方政府针对于国内政府型风险投资机构管理经验不足、退出渠道不畅、经营业绩欠佳等问题，积极探索出新的风险资本引导方式。如，1999 年上海市政府于提供6 亿元风险资本创建上海创业投资公司，采取了出资者与管理者相分离的基金管理模式，即上海创业投资公司不设立专业管理团队，而是通过招标方式从多家管理公司中优选22 家，将政府风险资本分块委托专业管理公司管理；2000 年江苏省政府改革省科技发展风险基金的管理模式，由国有独资的高新技术创业投资公司以两方式对外委托经营，一是与其它战略投资人共同建立风险投资机构，再是委托提供10%配套资金的民营风险投资管理公司管理；2001 年底北京中关村管委会设立&ldquo;中关村科技园区创业投资引导资金&rdquo;，为符合资质要求的创业投资机构提供跟进投资资金，2005 年进一步将方式扩大到&ldquo;孵化+创投&rdquo;、&ldquo;跟进投资&rdquo;和&ldquo;联合投资&rdquo;三种类型，采取政府资金委托民间机构管理的方式，引导民间资本支持园区内初创期、快速成长期和重点产业化项目。上述模式均将政府风险投资项目的选择与管理委托给民间资本，实现了政府出资者和基金管理者的分离，解决了政府直接从事风险投资活动的低效问题。</span></div>
+            <div align="left">2005年<span>11月，国家发改委等十部委联合出台《创业投资企业管理暂行办法》，规定&ldquo;国家与地方政府可以设立创业投资引导基金，通过参股和提供融资担保等方式扶持创业投资企业的设立与发展。&rdquo;自此各级政府风险投资引导基金陆续建立。这些政府风险投资引导基金可以分为三类，地方政府通过财政出资设立风险投资引导基金、地方政府联合国家开发银行设立风险投资引导基金和深圳创新投资集团与地方政府联合出资设立的风险投资引导基金。</span></div>
+            <div align="left">表<span>1 当前我国已设风险投资引导基金分类表</span></div>
+            <table border="1" cellspacing="0" cellpadding="0" style="border-bottom: medium none; border-left: medium none; border-collapse: collapse; border-top: medium none; border-right: medium none">
+                <tbody>
+                    <tr>
+                        <td valign="top" width="60" style="border-bottom: windowtext 1pt solid; border-left: windowtext 1pt solid; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 44.75pt; padding-right: 5.4pt; border-top: windowtext 1pt solid; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">类型</div>
+                        </td>
+                        <td valign="top" width="60" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 45pt; padding-right: 5.4pt; border-top: windowtext 1pt solid; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">设立日期</div>
+                        </td>
+                        <td valign="top" width="108" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 81pt; padding-right: 5.4pt; border-top: windowtext 1pt solid; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">名称</div>
+                        </td>
+                        <td valign="top" width="72" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 54pt; padding-right: 5.4pt; border-top: windowtext 1pt solid; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">出资人</div>
+                        </td>
+                        <td valign="top" width="95" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 71.3pt; padding-right: 5.4pt; border-top: windowtext 1pt solid; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">管理机构</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: windowtext 1pt solid; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">资金总规模</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: windowtext 1pt solid; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">投资方式</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="3" width="60" style="border-bottom: windowtext 1pt solid; border-left: windowtext 1pt solid; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 44.75pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>地方政府独资型</div>
+                        </td>
+                        <td valign="top" width="60" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 45pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">2001 年年底</div>
+                        </td>
+                        <td valign="top" width="108" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 81pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">中关村创业投资引导资金</div>
+                        </td>
+                        <td valign="top" width="72" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 54pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">中关村管委会</div>
+                        </td>
+                        <td valign="top" width="95" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 71.3pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">中关村创业投资发展中心</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">5 亿元</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">种子资金、跟进投资、参股基金</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" width="60" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 45pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">2006 年<span>10月21</span> 日</div>
+                        </td>
+                        <td valign="top" width="108" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 81pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">浦东新区创业风险投资引导基金</div>
+                        </td>
+                        <td valign="top" width="72" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 54pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">浦东新区</div>
+                        <div align="left">政府</div>
+                        </td>
+                        <td valign="top" width="95" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 71.3pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">上海浦东科技投资有限公司</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">10 亿元</div>
+                        <div align="left">&nbsp;</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">合作投资、参股基金</div>
+                        <div align="left">&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" width="60" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 45pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">2006 年<span>9</span></div>
+                        <div align="left">月</div>
+                        </td>
+                        <td valign="top" width="108" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 81pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>海淀区创业投资引导基金</div>
+                        </td>
+                        <td valign="top" width="72" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 54pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">海淀区政</div>
+                        <div align="left">府</div>
+                        <div>&nbsp;</div>
+                        </td>
+                        <td valign="top" width="95" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 71.3pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">中海投资管理公司</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>5 亿元</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">参股子基金</div>
+                        <div>&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" rowspan="3" width="60" style="border-bottom: windowtext 1pt solid; border-left: windowtext 1pt solid; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 44.75pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>国家开发银行软贷款参与型</div>
+                        </td>
+                        <td valign="top" width="60" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 45pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>2006 年<span>3月22</span> 日</div>
+                        </td>
+                        <td valign="top" width="108" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 81pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">苏州工业园区创业投资引导基金</div>
+                        </td>
+                        <td valign="top" width="72" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 54pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>国家开发银行、中新创投</div>
+                        </td>
+                        <td valign="top" width="95" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 71.3pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>中新工业园区创业投资有限公司</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>10 亿元</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>参股子基金</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" width="60" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 45pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">2007 年<span>2月</span></div>
+                        </td>
+                        <td valign="top" width="108" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 81pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>天津滨海新区创业风险投资引导基金</div>
+                        </td>
+                        <td valign="top" width="72" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 54pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>国家开发银行、天津滨海新区管委会</div>
+                        </td>
+                        <td valign="top" width="95" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 71.3pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">委托专业管理机构</div>
+                        <div>&nbsp;</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>20 亿元</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>参股子基金、合作投资</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" width="60" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 45pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">2007 年<span>6月12</span> 日</div>
+                        </td>
+                        <td valign="top" width="108" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 81pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>山西省创业风险投资引导基金</div>
+                        </td>
+                        <td valign="top" width="72" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 54pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>国家开发银行、山西省政府</div>
+                        </td>
+                        <td valign="top" width="95" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 71.3pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>&nbsp;</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>8 亿元</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>参股子基金</div>
+                        </td>
+                    </tr>
+                    <tr style="height: 109.2pt">
+                        <td valign="top" width="60" style="border-bottom: windowtext 1pt solid; border-left: windowtext 1pt solid; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 44.75pt; padding-right: 5.4pt; height: 109.2pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div align="left">深圳创新集团参与的引导基金</div>
+                        </td>
+                        <td valign="top" width="60" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 45pt; padding-right: 5.4pt; height: 109.2pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>2007 年</div>
+                        </td>
+                        <td valign="top" width="108" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 81pt; padding-right: 5.4pt; height: 109.2pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>&nbsp;</div>
+                        </td>
+                        <td valign="top" width="72" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 54pt; padding-right: 5.4pt; height: 109.2pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>建立地方引导基金的地方政府、深圳创新投资集团</div>
+                        </td>
+                        <td valign="top" width="95" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 71.3pt; padding-right: 5.4pt; height: 109.2pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>深圳创新投资集团组建的管理公司</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; height: 109.2pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>&nbsp;</div>
+                        </td>
+                        <td valign="top" width="79" style="border-bottom: windowtext 1pt solid; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 59.25pt; padding-right: 5.4pt; height: 109.2pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+                        <div>&nbsp;</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </td>
+        </tr>
+        <tr style="height: 30.65pt">
+            <td width="568" style="border-bottom: windowtext 1pt solid; border-left: windowtext 1pt solid; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 426.1pt; padding-right: 5.4pt; height: 30.65pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+            <div align="center">&nbsp;</div>
+            </td>
+        </tr>
+        <tr style="height: 163.05pt">
+            <td valign="top" width="568" style="border-bottom: windowtext 1pt solid; border-left: windowtext 1pt solid; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 426.1pt; padding-right: 5.4pt; height: 163.05pt; border-top: #ece9d8; border-right: windowtext 1pt solid; padding-top: 0cm">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+  </tr>
+</table>
+
+<span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:12.0pt;font-family:
+"Times New Roman";mso-fareast-font-family:SimSun;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA'><br
+clear=all style='mso-special-character:line-break;page-break-before:always'>
+</span>
+
+<table border="1" cellspacing="0"  style="border:none" cellpadding="0" width="680"   align="center" class="abc">
+  <tr>
+  <td width="608" height="38"  align="center" valign="middle" class="abc"><strong>主要研究内容</strong></td>
+  </tr>
+  <tr>
+    <td width="608" valign="top" class="abc" height="850"><div>一、我省科技型中小企业融资现状研究</div>
+<div>二、我省科技型中小企业创业投资补助现状</div>
+<div>三、我省设立引导基金的必要性和可行性</div>
+<div>四、我省创新发展引导基金操作方案及其说明</div>
+<div>五、引导基金操作中需进一步设计的文件</div>
+<div>六、国际成功政府引导基金的概括</div>
+<div>七、国内其他地区已设立政府引导基金情况</div>
+<div>八、关于创业投资引导基金规范设立与运作的指导意见</div></td>
+  </tr>
+</table>
+<table border="1" cellspacing="0"  style="border:none" cellpadding="0" width="680"   align="center" class="abc">
+  <tr>
+    <td height="38" colspan="5"><p align="center"><strong>现有研究工作基础及条件</strong></p></td>
+  </tr>
+  <tr>
+    <td colspan="5" valign="top" height="300"><div>1、四川省科技金融数据库系统的建立和逐步完善</div>
+<div>2、中国（西部）高新技术产业与风险资本对接推进会平台的进一步巩固</div>
+<div>3、四川银科对接服务平台的建设</div>
+<div>4、各市州科技金融的巡回培训</div>
+<div>5、深入全省中小企业全面的尽职调查，对于中小企业融资难的问题的准确把握</div>
+<div>6、本项目主要协作单位对安徽省引导基金的全方位策划</div>
+<div>7、本项目主要协作单位针对中小企业特别是早中期项目全方位融资服务母基金（fund of fund）的设想及募集</div></td>
+  </tr>
+  <tr>
+    <td height="37" colspan="5"><p align="center"><strong>预期研究成果</strong></p></td>
+  </tr>
+  <tr>
+    <td colspan="5" valign="top" height="300"><div>1、全面、准确把握我省科技型中小企业融资难的实际情况</div>
+<div>2、针对我省科技型中小企业融资难的问题，提出切实有效的建议</div>
+<div>3、论证我省成立创新发展引导基金的可行性</div>
+<div>4、提出适合我省实情的引导基金操作方案</div></td>
+  </tr>
+  <tr>
+    <td height="40" colspan="5"><p align="center"><strong>经费预算（万元）</strong></p></td>
+  </tr>
+  <tr>
+    <td height="41" colspan="5"><p>项目总投资<u>5</u>万元，其中：</p></td>
+  </tr>
+  <tr>
+    <td width="231" rowspan="2"><p align="center">申请科技厅拨款</p></td>
+    <td height="37" colspan="2"><p align="center">政府其他部门经费</p></td>
+    <td width="179" rowspan="2"><p align="center">单位自筹</p></td>
+    <td width="157" rowspan="2"><p align="center">其他资金</p></td>
+  </tr>
+  <tr>
+    <td width="168" height="37"><p align="center">部门名称</p></td>
+    <td width="211"><p align="center">经费</p></td>
+  </tr>
+  <tr>
+    <td width="231" height="52"><p align="center">5</p></td>
+    <td width="168"><p align="center"></p></td>
+    <td width="211"><p align="center">0</p></td>
+    <td width="179"><p align="center">0</p></td>
+    <td width="157"><p align="center">0</p></td>
+  </tr>
+</table>
+
+
+<span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:12.0pt;font-family:
+"Times New Roman";mso-fareast-font-family:SimSun;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA'><br
+clear=all style='mso-special-character:line-break;page-break-before:always'>
+</span>
+
+<strong>B、项目组基本信息</strong>（此页为单页，请勿双面打印） 
+
+<table width="680" border="0" align="center" cellpadding="3" cellspacing="1">
+  <tr>
+    <td colspan="2" align="center">项 目 名 称</td>
+    <td colspan="8"><span class="STYLE11">
+      四川省创新发展引导基金的设立建议及运作方案    </span></td>
+  </tr>
+  <tr>
+    <td rowspan="5">承担单位</td>
+    <td align="center">单位名称</td>
+    <td colspan="8">四川省科学技术信息研究所</td>
+  </tr>
+  <tr>
+    <td align="center">单位地址</td>
+    <td colspan="6" align="left">成都市大慈寺路32号</td>
+    <td align="center">邮    &nbsp;&nbsp;编</td>
+    <td align="center">610016</td>
+  </tr>
+  <tr>
+    <td>法人代表或负责人</td>
+    <td colspan="2">程劲</td>
+    <td align="center">单位性质</td>
+    <td colspan="2">科研院所</td>
+    <td align="center">归口部门</td>
+    <td colspan="2">科研院所</td>
+  </tr>
+  <tr>
+    <td align="center">联系人</td>
+    <td colspan="2">李亚丹</td>
+    <td align="center">电话</td>
+    <td colspan="2">(028)86780898</td>
+    <td align="center">手&nbsp;&nbsp;&nbsp;&nbsp;机</td>
+    <td colspan="2">13880791708</td>
+  </tr>
+  <tr>
+    <td align="center"><strong>E-mail</strong></td>
+    <td colspan="8">390957576@qq.com</td>
+  </tr>
+  <tr>
+    <td rowspan="5">协作单位</td>
+    <td colspan="4" align="center">单位名称</td>
+    <td colspan="5" align="center">在本项目中的分工</td>
+  </tr>
+  <tr>
+    <td colspan="4">四川省高新技术产业金融服务中心&nbsp;</td>
+    <td colspan="5"></td>
+  </tr>
+  <tr>
+    <td colspan="4">中国风险投资研究院&nbsp;</td>
+    <td colspan="5"></td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+    <td colspan="5"></td>
+  </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+    <td colspan="5"></td>
+  </tr>
+  <tr>
+    <td width="38" rowspan="2">项目负责人</td>
+    <td width="84" height="34" align="center">姓名</td>
+    <td colspan="2">倪文新&nbsp;</td>
+    <td width="41" align="center">性别</td>
+    <td width="59">女&nbsp;</td>
+    <td width="68" align="center">出生年月</td>
+    <td width="99">1968-12-31&nbsp;</td>
+    <td width="52" align="center">学历</td>
+    <td width="62">硕士    &nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center">职称/职务</td>
+    <td colspan="2">高级工程师</td>
+    <td align="center">电话</td>
+    <td colspan="2">(028)86629486</td>
+    <td>现从事专业</td>
+    <td colspan="2">信息科学与系统科学</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">项&nbsp;目&nbsp;组&nbsp;人&nbsp;数</td>
+    <td width="53" align="center">5</td>
+    <td colspan="2">高级职称人数</td>
+    <td align="center">1</td>
+    <td>中级职称人数</td>
+    <td align="center">4</td>
+    <td>初级职称人数</td>
+    <td align="center"></td>
+  </tr>
+  <tr>
+    <td rowspan="9">主要研究人员</td>
+    <td align="center">姓&nbsp;&nbsp;名</td>
+    <td align="center">性&nbsp;别</td>
+    <td colspan="2" align="center">职称/职务</td>
+    <td align="center">学&nbsp;历</td>
+    <td align="center">从事专业</td>
+    <td colspan="3" align="center">所&nbsp;&nbsp;在&nbsp;&nbsp;单&nbsp;&nbsp;位</td>
+  </tr>
+    <tr>
+    <td align="center">李兵&nbsp;</td>
+    <td align="center">女</td>
+    <td colspan="2" align="center">工程师</td>
+    <td align="center">学士</td>
+    <td align="center">信息科学与系统科学</td>
+    <td colspan="3">四川省高新技术产业金融服务中心</td>
+  </tr>
+   <tr>
+    <td align="center">毛敏&nbsp;</td>
+    <td align="center">女</td>
+    <td colspan="2" align="center">馆员</td>
+    <td align="center">学士</td>
+    <td align="center">信息科学与系统科学</td>
+    <td colspan="3">四川省高新技术产业金融服务中心</td>
+  </tr>
+   <tr>
+    <td align="center">鲜于钧&nbsp;</td>
+    <td align="center">男</td>
+    <td colspan="2" align="center">副研究员</td>
+    <td align="center">学士</td>
+    <td align="center">财政学</td>
+    <td colspan="3">中国风险投资研究院</td>
+  </tr>
+   <tr>
+    <td align="center">陈大明&nbsp;</td>
+    <td align="center">男</td>
+    <td colspan="2" align="center">副研究员</td>
+    <td align="center">硕士</td>
+    <td align="center">财政学</td>
+    <td colspan="3">中国风险投资研究院</td>
+  </tr>
+   <tr>
+    <td align="center">&nbsp;</td>
+    <td align="center">男</td>
+    <td colspan="2" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td colspan="3"></td>
+  </tr>
+   <tr>
+    <td align="center">&nbsp;</td>
+    <td align="center">男</td>
+    <td colspan="2" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td colspan="3"></td>
+  </tr>
+   <tr>
+    <td align="center">&nbsp;</td>
+    <td align="center">男</td>
+    <td colspan="2" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td colspan="3"></td>
+  </tr>
+   <tr>
+    <td align="center">&nbsp;</td>
+    <td align="center">男</td>
+    <td colspan="2" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td colspan="3"></td>
+  </tr>
+   <tr>
+    <td>归口部门意见</td>
+    <td colspan="9" valign="top"><p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>归口部门负责人（签章）                       （单位公章） <br />        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年   月   日&nbsp;</p></td>
+  </tr>
+</table>
+
+<span lang=EN-US style='font-size:10.5pt;mso-bidi-font-size:12.0pt;font-family:
+"Times New Roman";mso-fareast-font-family:SimSun;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA'><br
+clear=all style='mso-special-character:line-break;page-break-before:always'>
+</span>
+
+<strong>C、项目参与人员统计信息</strong> 
+<table width="680" align="center" cellpadding="3" cellspacing="1" class="abc">
+  <tr>
+    <td width="8%" rowspan="10">组人员组成情况</td>
+    <td width="7%">高端科技人才</td>
+    <td colspan="2">科学院院士（0）  工程院院士（0） 长江学者奖励计划（0）  国家“千人计划”（0）  省“百人计划”（0）</td>
+  </tr>
+  <tr>
+    <td width="7%">学历</td>
+    <td colspan="2">博士后（0） 博士研究生（0） 硕士研究生（2） 本科生（3） 大专生（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="7%">学位</td>
+    <td colspan="2">博士（0） 硕士（2） 学士（3）&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="7%" rowspan="4">职称</td>
+    <td>研究系列</td>
+    <td>高级（0） 中级（2） 初级（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td>工程系列</td>
+    <td>高级（1） 中级（1） 初级（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td>教师系列</td>
+    <td>高级（0） 中级（0） 初级（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td>其他系列</td>
+    <td>高级（0） 中级（1） 初级（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="7%">年龄</td>
+    <td colspan="2">35岁以下（2） 36到45岁（2） 46到55岁（1） 56岁以上（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="7%">引进人才类别</td>
+    <td colspan="2">海外人才（0） 省外人才（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="7%">引进人才方式</td>
+    <td colspan="2">调入（0） 聘用（0） 兼职（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td rowspan="6">培养人才情况</td>
+    <td width="7%">高端人才</td>
+    <td colspan="2">院士（0） 长江学者建立计划（0） 国家“千人计划”（0） 省“百人计划”（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="7%" rowspan="4">职称晋升</td>
+    <td width="13%">研究系列</td>
+    <td width="72%">高级（0） 中级（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td>工程系列</td>
+    <td>高级（0） 中级（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td>教师系列</td>
+    <td>高级（0） 中级（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td>其他系列</td>
+    <td>高级（0） 中级（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td>在读人才</td>
+    <td colspan="2">在读博士后（0） 在读博士研究生（0） 在读硕士研究生（0） 在读本科生（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td rowspan="2">吸纳大学生就业情况</td>
+    <td width="7%">学历</td>
+    <td colspan="2">博士后（0） 博士研究生（0） 硕士研究生（0） 本科及大专（0）&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="7%" height="106">毕业时间</td>
+    <td colspan="2">当年（0） 去年（0） 前年（0）&nbsp;</td>
+  </tr>
+</table>
+</body>
+
+</html>
