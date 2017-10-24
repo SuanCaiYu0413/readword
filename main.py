@@ -81,6 +81,7 @@ class DataParser():
                         rws_data = rws_parse.rws(html, file).parse()
                     except Exception, ex:
                         Log.write(u'%s:处理出错;ex:%s' % (file, str(ex)))
+                        continue
                     self.rws_table.write(rowNo['rws'], 0, rws_data['projectCode'])
                     self.rws_table.write(rowNo['rws'], 1, rws_data['researchareas'])
                     self.rws_table.write(rowNo['rws'], 2, rws_data['declareCode'])
@@ -137,6 +138,7 @@ class DataParser():
                         sbs_data = sbs_parse.sbs(html, file).parse()
                     except Exception, ex:
                         Log.write(u'%s:处理出错;ex:%s' % (file, str(ex)))
+                        continue
                     l1 = ['projectCode', 'researchareas', 'declareCode', 'projectName']
                     for index1, name in enumerate(l1):
                         self.sbs_table.write(rowNo['sbs'], index1, sbs_data[name])
@@ -191,6 +193,7 @@ class DataParser():
                         yss_data = yss_parse.yss(html, file).parse()
                     except Exception, ex:
                         Log.write(u'%s:处理出错;ex:%s' % (file, str(ex)))
+                        continue
                     self.yss_table.write(rowNo['yss'], 0, yss_data['projectCode'])
                     self.yss_table.write(rowNo['yss'], 1, yss_data['infoBriefing'])
                     self.yss_table.write(rowNo['yss'], 2, yss_data['projectName'])
